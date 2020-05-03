@@ -144,6 +144,11 @@ def doclogout(request):
 def profile_view_doc(request):
     user = request.user
     doctor = get_object_or_404(Doctor, pk=1)
+    return render(request, 'index/profile_doc.html', {"user":user, 'doctor':doctor})
+    
+def profile_update_doc(request):
+    user = request.user
+    doctor = get_object_or_404(Doctor, pk=1)
     if request.method == "POST":
         form = DoctorForm(request.POST or None, request.FILES or None)
         if form.is_valid():
@@ -153,17 +158,12 @@ def profile_view_doc(request):
                 print('found it')
                 doctor.profile_pic = request.FILES['profile_pic']
             doctor.save()
-            return render(request, 'index/profile_update.html', {'doctor': doctor})
+            return render(request, 'index/profile_doc.html', {'doctor': doctor})
         context = {
         "form": form,
         'doctor':doctor
         }
-        return render(request, 'index/profile_user.html', context)
-    return render(request, 'index/profile_doc.html', {"user":user, 'doctor':doctor})
-    
-def profile_update_doc(request):
-    user = request.user
-    doctor = get_object_or_404(Doctor, pk=1)
+        return render(request, 'index/doc_profile_update.html', context)
     return render(request, 'index/doc_profile_update.html', {'user': user, 'doctor':doctor})       
 
 def status_doc(request):
