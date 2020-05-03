@@ -1,5 +1,5 @@
-{% extends 'index/base.html' %}
-{% block title %}Patient{% endblock %}
+{% extends 'index/base1.html' %}
+{% block title %}doctor{% endblock %}
 {% block pat1 %}
     
 {% endblock %}
@@ -11,38 +11,44 @@
                 <span class="anchor" id="formUserEdit"></span>
                 <div class="card card-outline-secondary">
                     <div class="card-header">
-                        <h3 class="mb-0">Welcome {{ patient.first_name }} {{ patient.last_name }}</h3>
+                        <h3 class="mb-0">Welcome {{ doctor.first_name }} {{ doctor.last_name }}</h3>
                     </div>
                     <div class="card-body">
                         <div class="panel panel-default">
                             <div class="panel-body text-center">
-                                <img src="{{ patient.profile_pic.url }}" class="img-circle profile-avatar img-responsive" alt="User avatar">
+                                <img src="{{ doctor.profile_pic.url }}" class="img-circle profile-avatar img-responsive" alt="User avatar">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">First name</label>
                             <div class="col-lg-9">
-                                <p>{{ patient.first_name }}</p>
+                                <p>{{ doctor.first_name }}</p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                             <div class="col-lg-9">
-                                <p>{{ patient.last_name }}</p>
+                                <p>{{ doctor.last_name }}</p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Email</label>
                             <div class="col-lg-9">
-                                <p>{{ patient.email }}</p>
+                                <p>{{ doctor.email }}</p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Address</label>
                             <div class="col-lg-9">
-                                <p>{{ patient.address }}</p>
+                                <p>{{ doctor.address }}</p>
                             </div>
-                        </div>       
+                        </div>   
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Degree</label>
+                            <div class="col-lg-9">
+                                <p>{{ doctor.degree }}</p>
+                            </div>
+                        </div>     
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Username</label>
                             <div class="col-lg-9">
@@ -52,7 +58,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label"></label>
                             <div class="col-lg-9">
-                                <a href="{% url 'index:profile' %}">Edit Profile</a>
+                                <a href="{% url 'index:doc-profile-update' %}">Edit Profile</a>
                             </div>
                         </div>            
                     </div>

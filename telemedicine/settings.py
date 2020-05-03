@@ -38,10 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3',
-    'django_password_strength',
-    'django_countries',
-    'smartfields',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,7 +122,3 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-AUTH_USER_MODEL = 'index.Doctor'
-
-LOGIN_URL = '/index/doc_signin/'
-LOGIN_REDIRECT_URL = '/index/doc_profile/'

@@ -1,0 +1,6 @@
+{% for field in form %}
+    <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label" for="doctor_username">{{ field.label_tag }}</label>
+        <div class="col-lg-9">{{ field }}</div>
+    </div>
+{% endfor %}
